@@ -13,3 +13,12 @@ CREATE TABLE `user_table`(
     `money_amount` DECIMAL(15, 2) DEFAULT 0.00, 
     PRIMARY KEY(`id`)
 );
+
+CREATE TABLE `pix_key_table`(
+	`id` INT NOT NULL AUTO_INCREMENT,
+    `id_user` INT NOT NULL,
+    `key` VARCHAR(55) NOT NULL UNIQUE,
+    PRIMARY KEY(`id`),
+    /* constraint? Colocar dps*/
+    FOREIGN KEY (`id_user`) REFERENCES `user_table`(`id`)
+)
