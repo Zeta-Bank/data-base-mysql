@@ -21,4 +21,18 @@ CREATE TABLE `pix_key_table`(
     PRIMARY KEY(`id`),
     /* constraint? Colocar dps*/
     FOREIGN KEY (`id_user`) REFERENCES `user_table`(`id`)
-)
+);
+
+CREATE TABLE `transferencias_pix_table`(
+	`id` INT NOT NULL AUTO_INCREMENT,
+    `id_remetente` INT NOT NULL, 
+	`id_destinatario` INT NOT NULL,
+    /* E se o usuário deletar a chave pix dps? */
+    `id_chave_destinatario` INT NOT NULL,
+    `money_amount` DECIMAL(15, 2) NOT NULL DEFAULT 0,
+    PRIMARY KEY(`id`),
+    FOREIGN KEY(`id_remetente`) REFERENCES `user_table`(`id`),
+    FOREIGN KEY(`id_destinatario`) REFERENCES `user_table`(`id`),
+    FOREIGN KEY(`id_chave_destinatario`) REFERENCES `pix_key_table`(`id`)
+    
+);
