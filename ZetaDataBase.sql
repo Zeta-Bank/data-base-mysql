@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS ZetaDataBase;
-CREATE DATABASE ZetaDataBase;
+DROP DATABASE IF EXISTS `zeta_data_base`;
+CREATE DATABASE `zeta_data_base`;
 
-USE ZetaDataBase;
+USE `zeta_data_base`;
 
 CREATE TABLE `user_table`(
     `id` INT NOT NULL AUTO_INCREMENT,
